@@ -9,16 +9,18 @@ import (
 
 	"github.com/upbound/upjet/pkg/controller"
 
-	resource "github.com/upbound/upjet-provider-template/internal/controller/null/resource"
-	providerconfig "github.com/upbound/upjet-provider-template/internal/controller/providerconfig"
+	accesskey "github.com/woehrl01/provider-newrelic/internal/controller/api_access_key/accesskey"
+	providerconfig "github.com/woehrl01/provider-newrelic/internal/controller/providerconfig"
+	certcheckmonitor "github.com/woehrl01/provider-newrelic/internal/controller/synthetics_cert_check_monitor/certcheckmonitor"
 )
 
 // Setup creates all controllers with the supplied logger and adds them to
 // the supplied manager.
 func Setup(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
-		resource.Setup,
+		accesskey.Setup,
 		providerconfig.Setup,
+		certcheckmonitor.Setup,
 	} {
 		if err := setup(mgr, o); err != nil {
 			return err

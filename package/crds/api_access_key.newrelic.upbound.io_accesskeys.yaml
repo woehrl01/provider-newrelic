@@ -5,18 +5,18 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.8.0
   creationTimestamp: null
-  name: resources.null.template.upbound.io
+  name: accesskeys.api_access_key.newrelic.upbound.io
 spec:
-  group: null.template.upbound.io
+  group: api_access_key.newrelic.upbound.io
   names:
     categories:
     - crossplane
     - managed
-    - template
-    kind: Resource
-    listKind: ResourceList
-    plural: resources
-    singular: resource
+    - newrelic
+    kind: AccessKey
+    listKind: AccessKeyList
+    plural: accesskeys
+    singular: accesskey
   scope: Cluster
   versions:
   - additionalPrinterColumns:
@@ -35,7 +35,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: Resource is the Schema for the Resources API. <no value>
+        description: AccessKey is the Schema for the AccessKeys API. <no value>
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -50,7 +50,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: ResourceSpec defines the desired state of Resource
+            description: AccessKeySpec defines the desired state of AccessKey
             properties:
               deletionPolicy:
                 default: Delete
@@ -63,13 +63,19 @@ spec:
                 type: string
               forProvider:
                 properties:
-                  triggers:
-                    additionalProperties:
-                      type: string
-                    description: A map of arbitrary strings that, when changed, will
-                      force the null resource to be replaced, re-running any associated
-                      provisioners.
-                    type: object
+                  accountId:
+                    type: number
+                  ingestType:
+                    type: string
+                  keyType:
+                    type: string
+                  notes:
+                    type: string
+                  userId:
+                    type: number
+                required:
+                - accountId
+                - keyType
                 type: object
               providerConfigRef:
                 default:
@@ -243,7 +249,7 @@ spec:
             - forProvider
             type: object
           status:
-            description: ResourceStatus defines the observed state of Resource.
+            description: AccessKeyStatus defines the observed state of AccessKey.
             properties:
               atProvider:
                 properties:
