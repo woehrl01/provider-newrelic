@@ -1,6 +1,6 @@
 # Provider NewRelic
 
-This is a unofficial NewRelic provider for Crossplane leveraging the NewRelic Terraform provider.
+> This is a unofficial NewRelic provider for Crossplane leveraging the NewRelic Terraform provider.
 
 `provider-newrelic` is a [Crossplane](https://crossplane.io/) provider that
 is built using [Upjet](https://github.com/upbound/upjet) code
