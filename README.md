@@ -1,5 +1,7 @@
 # Provider NewRelic
 
+This is a unofficial NewRelic provider for Crossplane leveraging the NewRelic Terraform provider.
+
 `provider-newrelic` is a [Crossplane](https://crossplane.io/) provider that
 is built using [Upjet](https://github.com/upbound/upjet) code
 generation tools and exposes XRM-conformant managed resources for the
@@ -9,11 +11,13 @@ NewRelic API.
 
 Install the provider by using the following command after changing the image tag
 to the [latest release](https://marketplace.upbound.io/providers/woehrl01/provider-newrelic):
+
 ```
 up ctp provider install woehrl01/provider-newrelic:v0.1.0
 ```
 
 Alternatively, you can use declarative installation:
+
 ```
 cat <<EOF | kubectl apply -f -
 apiVersion: pkg.crossplane.io/v1
@@ -32,6 +36,7 @@ You can see the API reference [here](https://doc.crds.dev/github.com/woehrl01/pr
 ## Developing
 
 Run code-generation pipeline:
+
 ```console
 go run cmd/generator/main.go "$PWD"
 ```
