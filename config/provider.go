@@ -10,8 +10,8 @@ import (
 
 	ujconfig "github.com/upbound/upjet/pkg/config"
 
-	"github.com/woehrl01/provider-newrelic/config/apiAccessKey"
-	"github.com/woehrl01/provider-newrelic/config/syntheticsCertCheckMonitor"
+	"github.com/woehrl01/provider-newrelic/config/apiaccesskey"
+	"github.com/woehrl01/provider-newrelic/config/syntheticscertcheckmonitor"
 )
 
 const (
@@ -35,8 +35,8 @@ func GetProvider() *ujconfig.Provider {
 
 	for _, configure := range []func(provider *ujconfig.Provider){
 		// add custom config functions
-		apiAccessKey.Configure,
-		syntheticsCertCheckMonitor.Configure,
+		apiaccesskey.Configure,
+		syntheticscertcheckmonitor.Configure,
 	} {
 		configure(pc)
 	}
