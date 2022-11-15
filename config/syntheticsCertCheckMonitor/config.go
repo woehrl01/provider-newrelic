@@ -1,4 +1,4 @@
-package synthetics_cert_check_monitor
+package syntheticsCertCheckMonitor
 
 import "github.com/upbound/upjet/pkg/config"
 
@@ -6,5 +6,8 @@ import "github.com/upbound/upjet/pkg/config"
 func Configure(p *config.Provider) {
     p.AddResourceConfigurator("newrelic_synthetics_cert_check_monitor", func(r *config.Resource) {
         r.ShortGroup = "synthetics_cert_check_monitor"
+
+
+
     })
 }

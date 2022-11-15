@@ -81,6 +81,9 @@ spec:
                     items:
                       type: string
                     type: array
+                  name:
+                    description: name of the cert check monitor
+                    type: string
                   period:
                     description: The interval at which this monitor should run. Valid
                       values are EVERY_MINUTE, EVERY_5_MINUTES, EVERY_10_MINUTES,
@@ -110,6 +113,7 @@ spec:
                 required:
                 - certificateExpiration
                 - domain
+                - name
                 - period
                 - status
                 type: object

@@ -110,6 +110,11 @@ func (in *AccessKeyParameters) DeepCopyInto(out *AccessKeyParameters) {
 		*out = new(string)
 		**out = **in
 	}
+	if in.Name != nil {
+		in, out := &in.Name, &out.Name
+		*out = new(string)
+		**out = **in
+	}
 	if in.Notes != nil {
 		in, out := &in.Notes, &out.Notes
 		*out = new(string)

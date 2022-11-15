@@ -132,6 +132,11 @@ func (in *CertCheckMonitorParameters) DeepCopyInto(out *CertCheckMonitorParamete
 			}
 		}
 	}
+	if in.Name != nil {
+		in, out := &in.Name, &out.Name
+		*out = new(string)
+		**out = **in
+	}
 	if in.Period != nil {
 		in, out := &in.Period, &out.Period
 		*out = new(string)

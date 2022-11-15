@@ -37,6 +37,10 @@ type CertCheckMonitorParameters struct {
 	// +kubebuilder:validation:Optional
 	LocationsPublic []*string `json:"locationsPublic,omitempty" tf:"locations_public,omitempty"`
 
+	// name of the cert check monitor
+	// +kubebuilder:validation:Required
+	Name *string `json:"name" tf:"name,omitempty"`
+
 	// The interval at which this monitor should run. Valid values are EVERY_MINUTE, EVERY_5_MINUTES, EVERY_10_MINUTES, EVERY_15_MINUTES, EVERY_30_MINUTES, EVERY_HOUR, EVERY_6_HOURS, EVERY_12_HOURS, or EVERY_DAY.
 	// +kubebuilder:validation:Required
 	Period *string `json:"period" tf:"period,omitempty"`

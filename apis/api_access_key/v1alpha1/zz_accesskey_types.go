@@ -29,6 +29,9 @@ type AccessKeyParameters struct {
 	KeyType *string `json:"keyType" tf:"key_type,omitempty"`
 
 	// +kubebuilder:validation:Optional
+	Name *string `json:"name,omitempty" tf:"name,omitempty"`
+
+	// +kubebuilder:validation:Optional
 	Notes *string `json:"notes,omitempty" tf:"notes,omitempty"`
 
 	// +kubebuilder:validation:Optional
