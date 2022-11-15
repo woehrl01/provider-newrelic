@@ -11,7 +11,7 @@ export TERRAFORM_PROVIDER_REPO := https://github.com/newrelic/terraform-provider
 export TERRAFORM_PROVIDER_VERSION := 3.6.1
 export TERRAFORM_PROVIDER_DOWNLOAD_NAME := terraform-provider-newrelic
 export TERRAFORM_NATIVE_PROVIDER_BINARY := terraform-provider-newrelic_3.6.1_x5
-export TERRAFORM_DOCS_PATH := docs/resources
+export TERRAFORM_DOCS_PATH := 
 
 PLATFORMS ?= linux_amd64 linux_arm64
 

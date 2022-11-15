@@ -9,7 +9,7 @@ import (
 
 	"github.com/upbound/upjet/pkg/controller"
 
-	resource "github.com/woehrl01/provider-newrelic/internal/controller/null/resource"
+	accesskey "github.com/woehrl01/provider-newrelic/internal/controller/api_access_key/accesskey"
 	providerconfig "github.com/woehrl01/provider-newrelic/internal/controller/providerconfig"
 )
 
@@ -17,7 +17,7 @@ import (
 // the supplied manager.
 func Setup(mgr ctrl.Manager, o controller.Options) error {
 	for _, setup := range []func(ctrl.Manager, controller.Options) error{
-		resource.Setup,
+		accesskey.Setup,
 		providerconfig.Setup,
 	} {
 		if err := setup(mgr, o); err != nil {
