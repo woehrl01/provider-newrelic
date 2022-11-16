@@ -5,18 +5,18 @@ metadata:
   annotations:
     controller-gen.kubebuilder.io/version: v0.8.0
   creationTimestamp: null
-  name: certcheckmonitors.synthetics_cert_check_monitor.newrelic.upbound.io
+  name: accesskeys.apiaccesskey.newrelic.upbound.io
 spec:
-  group: synthetics_cert_check_monitor.newrelic.upbound.io
+  group: apiaccesskey.newrelic.upbound.io
   names:
     categories:
     - crossplane
     - managed
     - newrelic
-    kind: CertCheckMonitor
-    listKind: CertCheckMonitorList
-    plural: certcheckmonitors
-    singular: certcheckmonitor
+    kind: AccessKey
+    listKind: AccessKeyList
+    plural: accesskeys
+    singular: accesskey
   scope: Cluster
   versions:
   - additionalPrinterColumns:
@@ -35,8 +35,7 @@ spec:
     name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: CertCheckMonitor is the Schema for the CertCheckMonitors API.
-          <no value>
+        description: AccessKey is the Schema for the AccessKeys API. <no value>
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -51,7 +50,7 @@ spec:
           metadata:
             type: object
           spec:
-            description: CertCheckMonitorSpec defines the desired state of CertCheckMonitor
+            description: AccessKeySpec defines the desired state of AccessKey
             properties:
               deletionPolicy:
                 default: Delete
@@ -65,57 +64,20 @@ spec:
               forProvider:
                 properties:
                   accountId:
-                    description: ID of the newrelic account
                     type: number
-                  certificateExpiration:
-                    type: number
-                  domain:
+                  ingestType:
                     type: string
-                  locationsPrivate:
-                    description: The locations in which this monitor should be run.
-                    items:
-                      type: string
-                    type: array
-                  locationsPublic:
-                    description: The locations in which this monitor should be run.
-                    items:
-                      type: string
-                    type: array
+                  keyType:
+                    type: string
                   name:
-                    description: name of the cert check monitor
                     type: string
-                  period:
-                    description: The interval at which this monitor should run. Valid
-                      values are EVERY_MINUTE, EVERY_5_MINUTES, EVERY_10_MINUTES,
-                      EVERY_15_MINUTES, EVERY_30_MINUTES, EVERY_HOUR, EVERY_6_HOURS,
-                      EVERY_12_HOURS, or EVERY_DAY.
+                  notes:
                     type: string
-                  status:
-                    description: The monitor status (i.e. ENABLED, MUTED, DISABLED).
-                    type: string
-                  tag:
-                    description: The tags that will be associated with the monitor
-                    items:
-                      properties:
-                        key:
-                          description: Name of the tag key
-                          type: string
-                        values:
-                          description: Values associated with the tag key
-                          items:
-                            type: string
-                          type: array
-                      required:
-                      - key
-                      - values
-                      type: object
-                    type: array
+                  userId:
+                    type: number
                 required:
-                - certificateExpiration
-                - domain
-                - name
-                - period
-                - status
+                - accountId
+                - keyType
                 type: object
               providerConfigRef:
                 default:
@@ -289,7 +251,7 @@ spec:
             - forProvider
             type: object
           status:
-            description: CertCheckMonitorStatus defines the observed state of CertCheckMonitor.
+            description: AccessKeyStatus defines the observed state of AccessKey.
             properties:
               atProvider:
                 properties:

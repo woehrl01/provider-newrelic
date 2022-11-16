@@ -12,6 +12,7 @@ import (
 
 	"github.com/woehrl01/provider-newrelic/config/alertpolicy"
 	"github.com/woehrl01/provider-newrelic/config/apiaccesskey"
+	"github.com/woehrl01/provider-newrelic/config/nrqlalertcondition"
 	"github.com/woehrl01/provider-newrelic/config/syntheticscertcheckmonitor"
 )
 
@@ -39,6 +40,7 @@ func GetProvider() *ujconfig.Provider {
 		apiaccesskey.Configure,
 		syntheticscertcheckmonitor.Configure,
 		alertpolicy.Configure,
+		nrqlalertcondition.Configure,
 	} {
 		configure(pc)
 	}

@@ -13,6 +13,7 @@ var ExternalNameConfigs = map[string]config.ExternalName{
 	"newrelic_api_access_key":                config.IdentifierFromProvider,
 	"newrelic_synthetics_cert_check_monitor": config.IdentifierFromProvider,
 	"newrelic_alert_policy":                  config.IdentifierFromProvider,
+	"newrelic_nrql_alert_condition":          config.IdentifierFromProvider,
 }
 
 // ExternalNameConfigurations applies all external name configs listed in the
